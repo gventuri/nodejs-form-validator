@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-form-validator",
+  "version": "1.0.1",
+  "description": "A nodeJS package to validate forms and other user inputs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gventuri/nodejs-form-validator.git"
+  },
+  "keywords": [
+    "nodejs",
+    "validator",
+    "form",
+    "user",
+    "input"
+  ],
+  "author": "Gabriele Venturi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gventuri/nodejs-form-validator/issues"
+  },
+  "homepage": "https://github.com/gventuri/nodejs-form-validator#readme"
+}
