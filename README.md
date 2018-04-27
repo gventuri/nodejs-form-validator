@@ -28,7 +28,7 @@ NodeJS Form Validator can be very helpful to help you to validate user input bas
 Before you use NodeJS Form Validator, you need to create 'validation schemas', which are simple js objects very easy to configure.
 Something like this:
 
-```
+```javascript
   //USER MODEL
   const userSchema = {
     firstName: {
