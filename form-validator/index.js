@@ -29,17 +29,17 @@ module.exports = function(model, data){
       if(checkType == "isEmail"){
         const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        if((regex.exec(data[field])) === null) errors.push({type: checkType, field: field, error: requirements[checkType]});
+        if(data[field] && ((regex.exec(data[field])) === null)) errors.push({type: checkType, field: field, error: requirements[checkType]});
       }
 
       //IS NUMERIC
       if(checkType == "isNumber"){
-        if(Number(parseFloat(data[field])) !== data[field]) errors.push({type: checkType, field: field, error: requirements[checkType]});
+        if(data[field] && (Number(parseFloat(data[field])) !== data[field])) errors.push({type: checkType, field: field, error: requirements[checkType]});
       }
 
       //IS DATE
       if(checkType == "isDate"){
-        if(!(data[field] && Object.prototype.toString.call(data[field]) === "[object Date]" && !isNaN(data[field]))) errors.push({type: checkType, field: field, error: requirements[checkType]});
+        if(data[field] && !(Object.prototype.toString.call(data[field]) === "[object Date]" && !isNaN(data[field]))) errors.push({type: checkType, field: field, error: requirements[checkType]});
       }
     }
   }
