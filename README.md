@@ -6,15 +6,19 @@ With NodeJS Form validator, you can compare your form input or the user input wi
 ## Installation
 In order to install NodeJS Form Validator, you need to run:
 
+```
   npm install nodejs-form-validator
+```
 
 Once you have installed, you need to import the package inside your project. You can do it with:
 
+```javascript
   //Using Node.js `require()`
   const Validate = require('nodejs-form-validator');
 
   //Using ES6 imports
   import Validate from 'nodejs-form-validator';
+```
 
 Easy, isn't it?
 
@@ -24,6 +28,7 @@ NodeJS Form Validator can be very helpful to help you to validate user input bas
 Before you use NodeJS Form Validator, you need to create 'validation schemas', which are simple js objects very easy to configure.
 Something like this:
 
+```
   //USER MODEL
   const userSchema = {
     firstName: {
@@ -57,38 +62,47 @@ Something like this:
       isEmail: "E-mail not valid"
     }
   }
+```
 
 As you can see, you can use it to validate several things. You can check if the input has a minimum (or a maximum) number of chars, if it's a valid email, if it's a valid number, if it's a valid date and finally if it's required.
 Also, you can configure the error message, in case the condition doesn't come true.
 
 Now let's try to validate our user input. We have an object like this:
 
+```javascript
   const userInput = {
     name: "John",
     surname: "Doe",
     email: "john@example.com"
   }
+```
 
 Now, in order to validate, we need to run the following code:
 
+```javascript
   const errors = Validate(userSchema, userInput);
+```
 
 If there are errors, they'll be stored in the 'errors' var.
 
 Another useful thing that NodeJS Form Validator does is to check that the only input provided by the user are the ones in the schema, so if for example we try to validate an object like the following, we'll get an error:
 
+```javascript
   const wrongUserInput = {
     name: "John",
     surname: "Doe",
     email: "john@example.com",
     address: "Jonh's address"
   }
+```
 
 We'll get the following json error:
 
+```javascript
   {
     field: "address",
     error: "Missing field in the model"
   }
+```
 
 This happens because the user has provided an information that is not expected in the schema.
