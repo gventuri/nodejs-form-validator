@@ -1,6 +1,6 @@
 {
   "name": "nodejs-form-validator",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "A nodeJS package to validate forms and other user inputs",
   "main": "index.js",
   "scripts": {
