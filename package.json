@@ -1,10 +1,10 @@
 {
   "name": "nodejs-form-validator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A nodeJS package to validate forms and other user inputs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon example.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/gventuri/nodejs-form-validator/issues"
   },
-  "homepage": "https://github.com/gventuri/nodejs-form-validator#readme"
+  "homepage": "https://github.com/gventuri/nodejs-form-validator#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
 }

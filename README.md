@@ -106,3 +106,21 @@ We'll get the following json error:
 ```
 
 This happens because the user has provided an information that is not expected in the schema.
+
+Finally, you can extend the support to the children of the object, by adding `__children` as key inside the object, as you can see in the example:
+
+```javascript
+  const userInput = {
+    name: "John",
+    surname: "Doe",
+    email: "john@example.com",
+    options: {
+      __children: {
+        language: {},
+        timeZone: {}
+      }
+    }
+  }
+```
+
+With this code, you can verify also the children of `options`, which are `language` and `timeZone`. You can nest as many times as you wish by using the same syntax.
